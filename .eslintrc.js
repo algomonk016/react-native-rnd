@@ -32,4 +32,9 @@ module.exports = {
     semi: ['error', 'always'],
   },
   ignorePatterns: ['metro.config.js'],
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
 };
