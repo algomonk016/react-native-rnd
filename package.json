@@ -43,5 +43,11 @@
   },
   "engines": {
     "node": ">=16"
+  },
+  "lint-staged": {
+    "SIC/**/*. {js, jsx, ts, tsx}": [
+      "yarn lint",
+      "yarn format"
+    ]
   }
 }

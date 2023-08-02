@@ -5,8 +5,15 @@ type Props = {
   name?: string;
 }
 
-const Demo = (props: Props) => {
-  console.log('props', props);
+
+const a = 12;
+
+const Demo = (props: Props) => 
+{
+  console.log(
+    'props', 
+    props
+  );
   return (
     <View>
       <Text>Demo</Text>
