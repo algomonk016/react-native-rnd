@@ -8,6 +8,7 @@ type Props = {
 
 const a = 12;
 const b = 10;
+const c = 12;
 
 const Demo = (props: Props) => 
 {
