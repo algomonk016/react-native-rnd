@@ -35,7 +35,7 @@ function App(): JSX.Element {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}
       >
-        <Demo />   
+        <Demo />
       </ScrollView>
     </SafeAreaView>
   );

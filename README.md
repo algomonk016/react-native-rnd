@@ -1,7 +1,9 @@
 ## Awesome Project
+
 > Build on react native cli followed official app setup guide
 
 ###### Thigns I wanna try out
+
 - [ ] [StoryBook](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/get-started/)
 - [ ] [EsLint](https://eslint.org/docs/latest/use/core-concepts)
 - [ ] [Filpper: debugging](https://fbflipper.com/docs/features/react-native/)
@@ -12,9 +14,10 @@
 - [ ] [Fastlane: deployment](https://docs.fastlane.tools/getting-started/cross-platform/react-native/)
 - [ ] CI/CD: automated tests and deployment
 - [ ] Solid State Management
-    - even if initial setup is quite exhausting, managing the state should be easy
+  - even if initial setup is quite exhausting, managing the state should be easy
 
 ###### After this project is successfully completed, we'll have
+
 - [x] strict design system
 - [x] linting and code standards
 - [x] 100% test coverage
@@ -25,6 +28,7 @@
 - [x] automated testing and deployment
 
 ###### Versions
+
 ```
 java
   openjdk 11.0.20 2023-07-18 LTS
@@ -35,6 +39,7 @@ nodejs: v16
 ```
 
 ###### Checks before running
+
 - [ ] android/local.properties -> check os and user-name
 - [ ] adb and android studio
 - [ ] cd ios && pod install && cd ..
@@ -42,15 +47,19 @@ nodejs: v16
 <br>
 
 ###### warnings jo aaye
+
 - watchman ka tha ek, uske neeche hi tha ki kaise remove karenge, vahi karke ho gaya
 
 ###### Errors jo aaye the
+
 - [x] React Native android build failed. SDK location not found
-    - android/local.properties was missing
+
+  - android/local.properties was missing
 
 - [x] unable to attach DB
+
   - ```
-      for mac: 
+      for mac:
         rm -rf ~/Library/Developer/Xcode/DerivedData/
         cd ios
         pod deintegrate
@@ -61,17 +70,20 @@ nodejs: v16
       for windows:
         sorry guys, you can't test on ios emulator 😂
     ```
+
 - [x] command adb not found
-    - adb install karne se fix ho gaya
+  - adb install karne se fix ho gaya
 
 <br>
 
---------------------------------------
+---
+
 <br>
 
 <br>
 
 > graph: interesting lag raha tha to daal diya taaki baad mein yaad rahe
+
 ```mermaid
 graph TD;
     A-->B;
