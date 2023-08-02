@@ -45,7 +45,7 @@
     "node": ">=16"
   },
   "lint-staged": {
-    "SIC/**/*. {js, jsx, ts, tsx}": [
+    "src/**/*. {js, jsx, ts, tsx}": [
       "yarn lint",
       "yarn format"
     ]
