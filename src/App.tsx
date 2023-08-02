@@ -6,16 +6,9 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  useColorScheme,
-} from 'react-native';
+import {SafeAreaView, ScrollView, StatusBar, useColorScheme} from 'react-native';
 
-import {
-  Colors,
-} from 'react-native/Libraries/NewAppScreen';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 import Demo from '@/components/Demo';
 
 function App(): JSX.Element {
@@ -31,10 +24,7 @@ function App(): JSX.Element {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}
-      >
+      <ScrollView contentInsetAdjustmentBehavior="automatic" style={backgroundStyle}>
         <Demo />
       </ScrollView>
     </SafeAreaView>

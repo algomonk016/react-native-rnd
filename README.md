@@ -5,7 +5,9 @@
 ###### Thigns I wanna try out
 
 - [ ] [StoryBook](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/get-started/)
-- [ ] [EsLint](https://eslint.org/docs/latest/use/core-concepts)
+- [x] [EsLint](https://eslint.org/docs/latest/use/core-concepts)
+- [x] [Husky](https://www.npmjs.com/package/husky)
+- [x] [Commit-Lint](https://commitlint.js.org/#/)
 - [ ] [Filpper: debugging](https://fbflipper.com/docs/features/react-native/)
 - [ ] [Jest unit tests](https://jestjs.io/docs/tutorial-react-native)
 - [ ] [Detox e2e tests](https://wix.github.io/Detox/docs/introduction/getting-started/)
@@ -20,6 +22,7 @@
 
 - [x] strict design system
 - [x] linting and code standards
+- [x] consistent commits
 - [x] 100% test coverage
 - [x] solid and easy state management
 - [x] documentation of each code
@@ -43,6 +46,25 @@ nodejs: v16
 - [ ] android/local.properties -> check os and user-name
 - [ ] adb and android studio
 - [ ] cd ios && pod install && cd ..
+
+```
+the following code (in package.json) takes care of linting and formatting the code pre-commiting
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "eslint --ext .tsx --ext .ts src/ --fix"
+    ],
+    "./src/**": [
+      "prettier --write ."
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+  "commitlint": for checking the commit
+
+```
 
 <br>
 
