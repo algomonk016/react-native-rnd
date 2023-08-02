@@ -104,6 +104,64 @@ the following code (in package.json) takes care of linting and formatting the co
 
 <br>
 
+###### CommitLint Types
+
+```
+build: Changes related to the build system or external dependencies.
+Example: build: Upgrade webpack to version 5
+```
+
+```
+chore: Updates or improvements to the development workflow or tools.
+Example: chore: Update gitignore file
+```
+
+```
+ci: Changes to the continuous integration configuration files and scripts.
+Example: ci: Configure Travis CI to run tests
+```
+
+```
+docs: Updates or additions to documentation.
+Example: docs: Update README with new usage instructions
+```
+
+```
+feat: Introduces a new feature or functionality.
+Example: feat: Add user authentication feature
+```
+
+```
+fix: Fixes a bug or issue.
+Example: fix: Resolve crash when submitting empty form
+```
+
+```
+perf: Improves performance.
+Example: perf: Optimize database query
+```
+
+```
+refactor: Code refactoring without adding new features or fixing bugs.
+Example: refactor: Restructure project directory
+```
+
+```
+revert: Reverts a previous commit.
+Example: revert: Revert changes to the user authentication
+```
+
+```
+style: Changes related to code formatting, indentation, or style.
+Example: style: Apply consistent indentation
+```
+
+```
+test: Adds or modifies tests.
+Example: test: Add unit tests for user validation
+
+```
+
 > graph: interesting lag raha tha to daal diya taaki baad mein yaad rahe
 
 ```mermaid
