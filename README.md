@@ -4,7 +4,6 @@
 
 ###### Thigns I wanna try out
 
-- [ ] [StoryBook](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/get-started/)
 - [x] [EsLint](https://eslint.org/docs/latest/use/core-concepts)
 - [x] [Husky](https://www.npmjs.com/package/husky)
 - [x] [Commit-Lint](https://commitlint.js.org/#/)
@@ -20,15 +19,23 @@
 
 ###### After this project is successfully completed, we'll have
 
-- [x] strict design system
 - [x] linting and code standards
 - [x] consistent commits
 - [x] 100% test coverage
 - [x] solid and easy state management
+- [x] offline-support
 - [x] documentation of each code
 - [x] scalable code & infrastructure
 - [x] theme support (dark and light)
 - [x] automated testing and deployment
+
+---
+
+###### skipping Storybook because it may outweigh its benefits
+
+- it can be useful when we have multiple apps that have same ui components
+- [ ] [StoryBook](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/get-started/)
+- [ ] strict design system with storybook
 
 ###### Versions
 
