@@ -1,12 +1,15 @@
 import {View, Text} from 'react-native';
-import React from 'react';
+import React, {useEffect} from 'react';
 
 type Props = {
   name?: string;
 };
 
 const Demo = (props: Props) => {
-  console.log('props', props);
+  useEffect(() => {
+    console.log('props', props);
+  }, []);
+
   return (
     <View>
       <Text>Demo</Text>
