@@ -109,6 +109,39 @@ the following code (in package.json) takes care of linting and formatting the co
 
 <br>
 
+###### Debugging
+
+- [React-Devtools](https://www.npmjs.com/package/react-devtools)
+- [Debugging-basics](https://reactnative.dev/docs/debugging)
+- [Performance](https://sentry.io/for/performance/?utm_source=google&utm_medium=cpc&utm_id=%7B19614882438%7D&utm_campaign=Google_Search_NB_LanguageSpecific_Performance_ROW_Alpha&utm_content=g&utm_term=react%20profiling&gad=1)
+
+###### Styling
+
+- for resoponsive ui, use Dimensions
+
+  ```js
+  const { width, height } = Dimensions.get('window');
+
+  container: {
+    width: width < 380 ? 20 : 40,
+  }
+  ```
+
+- platform specific styling
+
+  ```js
+  width: Platform.select({ios: 2, android: 0});
+  ```
+
+- platform specific files
+
+  ```js
+  colors.android.ts;
+  colors.ios.ts;
+
+  import colors from './colors';
+  ```
+
 <br>
 
 ###### CommitLint Types
