@@ -1,20 +1,20 @@
-import {View, Text} from 'react-native';
-import React, {useEffect} from 'react';
+import React, {FC, ReactNode} from 'react';
+import {makeStyles} from '@rneui/themed';
+import {View} from 'react-native';
 
 type Props = {
-  name?: string;
+  children: ReactNode;
 };
 
-const Demo = (props: Props) => {
-  useEffect(() => {
-    console.log('props', props);
-  }, []);
-
-  return (
-    <View>
-      <Text>Demo</Text>
-    </View>
-  );
+const Background: FC<Props> = ({children}) => {
+  const styles = useStyles();
+  return <View style={styles.container}>{children}</View>;
 };
 
-export default Demo;
+export default Background;
+
+const useStyles = makeStyles(theme => ({
+  container: {
+    backgroundColor: theme.colors.background,
+  },
+}));
