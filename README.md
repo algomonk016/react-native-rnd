@@ -169,6 +169,7 @@ Example: docs: Update README with new usage instructions
 ```
 feat: Introduces a new feature or functionality.
 Example: feat: Add user authentication feature
+         feat(deps): added <package-name> <version>
 ```
 
 ```
