@@ -6,36 +6,18 @@
  */
 
 import React from 'react';
-import {SafeAreaView, ScrollView, StatusBar, useColorScheme} from 'react-native';
 import {ThemeProvider} from '@rneui/themed';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
-
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-import Background from '@/components/Demo';
+import {NavigationContainer} from '@react-navigation/native';
 import {theme} from './theme';
+import 'react-native-gesture-handler';
+import Navigation from './navigation';
 
 function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
   return (
     <ThemeProvider theme={theme}>
-      <SafeAreaProvider>
-        <SafeAreaView style={backgroundStyle}>
-          <StatusBar
-            barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-            backgroundColor={backgroundStyle.backgroundColor}
-          />
-          <Background>
-            <ScrollView
-              contentInsetAdjustmentBehavior="automatic"
-              style={backgroundStyle}></ScrollView>
-          </Background>
-        </SafeAreaView>
-      </SafeAreaProvider>
+      <NavigationContainer>
+        <Navigation isLoggedIn={true} />
+      </NavigationContainer>
     </ThemeProvider>
   );
 }
