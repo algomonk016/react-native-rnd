@@ -30,6 +30,7 @@ module.exports = {
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
+    'no-extra-boolean-cast': 'off', // to use !! and Boolean cast
   },
   ignorePatterns: ['metro.config.js'],
   settings: {
