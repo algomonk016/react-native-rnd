@@ -1,7 +1,7 @@
 import {Button} from '@rneui/themed';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 
 // navigation
 import {RootStackParam} from '@/navigation/types';
@@ -11,14 +11,27 @@ import {StackScreenProps} from '@react-navigation/stack';
 import {useAppDispatch, useAppSelector} from '@/hooks/redux.hooks';
 import {increment, decrement, update} from './slices/counter.slice';
 
-// exporting reducers
-export * as Counter from './slices/counter.slice';
+// rtk
+import {useGetPokemonByNameQuery} from './services/pokemon';
 
 type Props = StackScreenProps<RootStackParam, 'Home'>;
 
 const Home = ({navigation}: Props) => {
   const count = useAppSelector(state => state.counter);
   const dispatch = useAppDispatch();
+
+  const [pokemon, setPokemon] = useState<string>('');
+
+  // rtk-query
+  // will be fetched when the pokemon state is set, otherwise skip
+  const {data, error, isLoading} = useGetPokemonByNameQuery(pokemon, {
+    skip: !pokemon,
+    selectFromResult: result => result, // can be used to filter/modify the api response
+    pollingInterval: 10000, // interval(ms) to automatically refetch data
+    refetchOnFocus: false,
+    refetchOnMountOrArgChange: false,
+    refetchOnReconnect: false,
+  });
 
   // updating the states
   const decrementByOne = () => dispatch(decrement());
@@ -38,6 +51,28 @@ const Home = ({navigation}: Props) => {
             <Button style={styles.button} title={'+1'} onPress={incrementByOne} />
             <Button style={styles.button} title={'+5'} onPress={add5} />
           </View>
+        </View>
+      </View>
+
+      <View style={styles.container}>
+        <Text onPress={() => setPokemon('bulbasaur')} style={styles.headerText}>
+          Pokemon:{' '}
+        </Text>
+        <Text> {isLoading ? 'Loading' : 'Loaded'} </Text>
+
+        <View>
+          {Boolean(error) ? (
+            <View>
+              <Text>{JSON.stringify(error)}</Text>
+            </View>
+          ) : (
+            <View>
+              <Text> Name: {data?.name} </Text>
+              <Text> Weight: {data?.weight} </Text>
+              <Text> Height: {data?.height} </Text>
+              <Text> Order: {data?.order} </Text>
+            </View>
+          )}
         </View>
       </View>
 
