@@ -105,6 +105,40 @@ the following code (in package.json) takes care of linting and formatting the co
 
 <br>
 
+##### Tests Setup Issues
+Faced few errors while setting up the jest
+```
+SyntaxError: Cannot use import statement outside a module
+fix: updated jest.config.js (don't know what exact fixed it, probably the babel-jest)
+
+```
+```
+SyntaxError: Invalid or unexpected token
+> 1 | import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
+
+Fix
+the official documentation of react-navigation, test with jest
+
+``` 
+```
+Warning: `fetch` is not available. Please supply a custom `fetchFn` property to use `fetchBaseQuery` on SSR environments.
+
+Fix 
+install whatwg-fetch
+after install it add import 'whatwg-fetch'; at the beginning (line 1) of the file.test youre using
+
+``` 
+
+```
+
+ReferenceError: You are trying to access a property or method of the Jest environment after it has been torn down. From __tests__/App.test.tsx.
+ReferenceError: You are trying to `import` a file after the Jest environment has been torn down. From __tests__/App.test.tsx.
+
+Fix
+jest.useFakeTimers(); fixed this, add this line just after the imports
+
+```
+
 ---
 
 <br>

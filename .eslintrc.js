@@ -32,7 +32,7 @@ module.exports = {
     semi: ['error', 'always'],
     'no-extra-boolean-cast': 'off', // to use !! and Boolean cast
   },
-  ignorePatterns: ['metro.config.js'],
+  ignorePatterns: ['metro.config.js', 'setup.js'],
   settings: {
     react: {
       version: 'detect',
