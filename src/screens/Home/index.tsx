@@ -16,6 +16,16 @@ import {useGetPokemonByNameQuery} from './services/pokemon';
 
 type Props = StackScreenProps<RootStackParam, 'Home'>;
 
+/**
+ * @component
+ * Represents the Home screen of the mobile app.
+ *
+ * This component displays a counter and allows the user to increment, decrement, and update the counter value.
+ * It also fetches data about a Pokemon from an external API and displays the Pokemon's name, weight, height, and order.
+ * The component uses Redux for state management and React Navigation for navigation between screens.
+ *
+ */
+
 const Home = ({navigation}: Props) => {
   const count = useAppSelector(state => state.counter);
   const dispatch = useAppDispatch();
@@ -42,19 +52,36 @@ const Home = ({navigation}: Props) => {
     <SafeAreaView style={styles.mainPage}>
       <Text style={styles.headerText}>Home</Text>
 
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <Text style={styles.headerText}>Counter </Text>
         <View>
-          <Text style={[styles.headerText, {textAlign: 'center'}]}> {count.value} </Text>
+          <Text testID="counter-value" style={[styles.headerText, {textAlign: 'center'}]}>
+            {count.value}
+          </Text>
           <View style={styles.flexBox}>
-            <Button style={styles.button} title={'-1'} onPress={decrementByOne} />
-            <Button style={styles.button} title={'+1'} onPress={incrementByOne} />
-            <Button style={styles.button} title={'+5'} onPress={add5} />
+            <Button
+              testID="decrement-counter-button"
+              style={styles.button}
+              title={'-1'}
+              onPress={decrementByOne}
+            />
+            <Button
+              testID="increment-counter-button"
+              style={styles.button}
+              title={'+1'}
+              onPress={incrementByOne}
+            />
+            <Button
+              testID="incrementBy5-counter-button"
+              style={styles.button}
+              title={'+5'}
+              onPress={add5}
+            />
           </View>
         </View>
-      </View>
+      </SafeAreaView>
 
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <Text onPress={() => setPokemon('bulbasaur')} style={styles.headerText}>
           Pokemon:{' '}
         </Text>
@@ -74,7 +101,7 @@ const Home = ({navigation}: Props) => {
             </View>
           )}
         </View>
-      </View>
+      </SafeAreaView>
 
       <Button
         onPress={() => navigation.push('Notifications', {name: 'Random Name'})}
