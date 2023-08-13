@@ -2125,6 +2125,13 @@
   dependencies:
     "@sinonjs/commons" "^3.0.0"
 
+"@testing-library/react-native@^12.2.0":
+  version "12.2.0"
+  resolved "https://registry.yarnpkg.com/@testing-library/react-native/-/react-native-12.2.0.tgz#72d4feed1c21c9c089f6184a1564fb46c22bb9b1"
+  integrity sha512-0r9xCPfy8+IiB8en5viKjiOx0aVUoCOZDUH8lET0R8SEb4/R2sdCTO4UIZjpm9OIA+j5MKt6YSfc4yjF72hE8g==
+  dependencies:
+    pretty-format "^29.0.0"
+
 "@tsconfig/node10@^1.0.7":
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/@tsconfig/node10/-/node10-1.0.9.tgz#df4907fc07a886922637b15e02d4cebc4c0021b2"
