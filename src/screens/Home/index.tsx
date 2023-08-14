@@ -46,7 +46,14 @@ const Home = ({navigation}: Props) => {
   // updating the states
   const decrementByOne = () => dispatch(decrement());
   const incrementByOne = () => dispatch(increment());
-  const add5 = () => dispatch(update(5));
+  const add5 = () => {
+    dispatch(update(5));
+    consoleCounterValue();
+  };
+
+  const consoleCounterValue = () => {
+    console.log('value', count);
+  };
 
   return (
     <SafeAreaView style={styles.mainPage}>

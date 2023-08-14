@@ -39,17 +39,12 @@ describe('Home Screen', () => {
 });
 
 describe('Counter', () => {
-  // const incrementByOne = jest.fn().mockName('incrementByOne@');
-  // const decrementByOne = jest.fn().mockName('decrementByOne');
-  // const add5 = jest.fn().mockName('add5');
-
   beforeEach(() => {
     render(
       <Provider store={store}>
         <Home navigation={navigation} route={route} />
       </Provider>,
     );
-    // fireEvent.changeText(screen.getByTestId('counter-value'), 0);
   });
 
   /**
@@ -60,19 +55,16 @@ describe('Counter', () => {
     it('should increment the counter value', () => {
       fireEvent.press(screen.getByTestId('increment-counter-button'));
       expect(screen.getByTestId('counter-value').props.children).toBe(1);
-      // expect(incrementByOne).toBeCalled();
     });
 
     it('should increment the counter value by 5', () => {
       fireEvent.press(screen.getByTestId('incrementBy5-counter-button'));
       expect(screen.getByTestId('counter-value').props.children).toBe(6);
-      // expect(add5).toBeCalled();
     });
 
     it('should decrement the counter value', () => {
       fireEvent.press(screen.getByTestId('decrement-counter-button'));
       expect(screen.getByTestId('counter-value').props.children).toBe(5);
-      // expect(decrementByOne).toBeCalled();
     });
   });
 });
