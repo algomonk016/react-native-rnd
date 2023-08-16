@@ -1,38 +1,38 @@
 /**
  * @format
  */
-import 'react-native';
-import React from 'react';
 import {Home} from '@/screens';
+import React from 'react';
+import 'react-native';
 
-// Note: import explicitly to use the types shiped with jest.
-import {it, describe} from '@jest/globals';
-
-// Note: test renderer must be required after react-native.
+// testing
+import {describe, it} from '@jest/globals';
 import {fireEvent, render, screen} from '@testing-library/react-native';
-import {RootStackParam} from '@/navigation/types';
-import {RouteProp} from '@react-navigation/native';
-import {useNavigation} from '@/../jest/__mocks__/react-navigation';
-import {Provider} from 'react-redux';
+
+// redux
 import {store} from '@/store';
+import {Provider} from 'react-redux';
 import {decrement, increment, update} from '../slices/counter.slice';
 
-const navigation = useNavigation();
+// navigation
+import {useNavigation} from '@/../jest/__mocks__/react-navigation';
+import {RootStackParam} from '@/navigation/types';
+import {NavigationContainer, RouteProp} from '@react-navigation/native';
+
 const route: RouteProp<RootStackParam, 'Home'> = {
   key: 'Testing-home',
   name: 'Home',
 };
 
-// Mock useNavigation with the module factory
-jest.mock('@/../jest/__mocks__/react-navigation', () => ({
-  useNavigation: jest.fn(),
-}));
+const navigation = useNavigation();
 
 describe('Home Screen Functions', () => {
   beforeEach(() => {
     render(
       <Provider store={store}>
-        <Home navigation={navigation} route={route} />
+        <NavigationContainer>
+          <Home navigation={navigation} route={route} />
+        </NavigationContainer>
       </Provider>,
     );
   });
@@ -73,27 +73,12 @@ describe('Home Screen Functions', () => {
     });
   });
 
-  // describe('Home Screen Functions', () => {
-  //   it('should navigate to Notifications screen when "Go to notifications" button is pressed', () => {
-  //     // Create a mock for the navigation object
-  //     const mockNavigation = {
-  //       push: jest.fn(),
-  //     };
+  describe('Home Screen Functions', () => {
+    it('should call "goToNavigationScreen" when "Go to notifications" button is pressed', () => {
+      const notificationsButton = screen.getByText('Go to notifications');
+      fireEvent.press(notificationsButton);
 
-  //     // Mock the useNavigation function to return the mock navigation object
-  //     (useNavigation as jest.Mock).mockReturnValue(mockNavigation);
-
-  //     render(
-  //       <Provider store={store}>
-  //         <Home navigation={navigation} route={route} />
-  //       </Provider>
-  //     );
-
-  //     // Simulate button press
-  //     fireEvent.press(screen.getByRole('button', { name: 'Go to notifications' }));
-
-  //     // Assert that navigation.push was called with the correct parameters
-  //     expect(mockNavigation.push).toHaveBeenCalledWith('Notifications', { name: 'Random Name' });
-  //   });
-  // });
+      expect(navigation.push).toHaveBeenCalledWith('Notifications', {name: 'Random Name'});
+    });
+  });
 });
