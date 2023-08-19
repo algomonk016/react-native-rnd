@@ -11,7 +11,7 @@ const Pokemon = () => {
   const {data, error, isLoading} = useGetPokemonByNameQuery(pokemon, {
     skip: !pokemon,
     selectFromResult: result => result, // can be used to filter/modify the api response
-    pollingInterval: 10000, // interval(ms) to automatically refetch data
+    pollingInterval: 100000, // interval(ms) to automatically refetch data
     refetchOnFocus: false,
     refetchOnMountOrArgChange: false,
     refetchOnReconnect: false,

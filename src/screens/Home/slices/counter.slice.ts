@@ -24,10 +24,13 @@ export const counterSlice = createSlice({
     decrement: state => {
       state.value = Math.max(state.value - 1, 0);
     },
+    clearCount: state => {
+      state.value = 0;
+    },
   },
 });
 
-export const {increment, decrement, update} = counterSlice.actions;
+export const {increment, decrement, update, clearCount} = counterSlice.actions;
 export const selectCount = (state: RootState) => state.counter.value;
 
 export default counterSlice.reducer;

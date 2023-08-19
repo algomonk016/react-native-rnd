@@ -12,4 +12,7 @@ export const styles = StyleSheet.create({
     marginVertical: 5,
     fontSize: 20,
   },
+  button: {
+    marginVertical: 5,
+  },
 });
