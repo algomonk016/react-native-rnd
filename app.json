@@ -1,4 +1,18 @@
 {
   "name": "AwesomeProject",
-  "displayName": "AwesomeProject"
+  "displayName": "AwesomeProject",
+  "environments": {
+    "development": {
+      "API_URL": "https://pokeapi.co/api/v2",
+      "ENV": "development"
+    },
+    "staging": {
+      "API_URL": "https://pokeapi.co/api/v2",
+      "ENV": "staging"
+    },
+    "production": {
+      "API_URL": "https://pokeapi.co/api/v2",
+      "ENV": "production"
+    }
+  }
 }
