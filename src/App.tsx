@@ -12,16 +12,20 @@ import {theme} from './theme';
 import 'react-native-gesture-handler';
 import Navigation from './navigation';
 import {Provider} from 'react-redux';
-import {store} from './store';
+import {PersistGate} from 'redux-persist/integration/react';
+import {persistor, store} from './store';
+import {Text} from 'react-native';
 
 function App(): JSX.Element {
   return (
     <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <NavigationContainer>
-          <Navigation isLoggedIn={true} />
-        </NavigationContainer>
-      </ThemeProvider>
+      <PersistGate loading={<Text>Loading...</Text>} persistor={persistor}>
+        <ThemeProvider theme={theme}>
+          <NavigationContainer>
+            <Navigation isLoggedIn={true} />
+          </NavigationContainer>
+        </ThemeProvider>
+      </PersistGate>
     </Provider>
   );
 }
