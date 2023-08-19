@@ -7,7 +7,7 @@
 - [x] [EsLint](https://eslint.org/docs/latest/use/core-concepts)
 - [x] [Husky](https://www.npmjs.com/package/husky)
 - [x] [Commit-Lint](https://commitlint.js.org/#/)
-- [ ] [Filpper: debugging](https://fbflipper.com/docs/features/react-native/)
+- [x] [Filpper: debugging](https://fbflipper.com/docs/features/react-native/)
 - [ ] [Jest unit tests](https://jestjs.io/docs/tutorial-react-native)
 - [ ] [Detox e2e tests](https://wix.github.io/Detox/docs/introduction/getting-started/)
 - [ ] [Performance Monitoring](https://blog.sentry.io/performance-monitoring-support-for-react-native/)
@@ -52,10 +52,14 @@ nodejs: v16
 
 - [ ] android/local.properties -> check os and user-name
 - [ ] adb and android studio
-- [ ] cd ios && pod install && cd ..
+- [ ] cd ios && pod install && cd .. (auto checked after installing package)
+- [ ] install graphviz
+- [ ] install flipper
+
+###### Package.json
 
 ```
-the following code (in package.json) takes care of linting and formatting the code pre-commiting
+the following scripts takes care of linting and formatting the code pre-commiting
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
       "eslint --ext .tsx --ext .ts src/ --fix"
@@ -70,6 +74,30 @@ the following code (in package.json) takes care of linting and formatting the co
     }
   }
   "commitlint": for checking the commit
+
+```
+
+```
+
+  // Check for circular dependencies using Madge
+  "dependencies:checkCircular": "madge src/ --circular",
+  // Generate a circular dependency graph using Madge
+  "dependencies:graph": "madge src/ --circular --image deps-graph.svg",
+
+"madge": {
+    // Configure Madge for circular dependency checks
+    "tsConfig": "./tsconfig.json",
+    "fileExtensions": "ts",
+    "excludeRegExp": [
+      ".*\\.test\\.ts$",
+      ".*\\.test\\.tsx$"
+    ],
+    "detectiveOptions": {
+      "ts": {
+        "skipTypeImports": true
+      }
+    }
+  }
 
 ```
 
