@@ -1,0 +1,9 @@
+{
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  "editor.fontSize": 12,
+  "editor.tabSize": 2,
+  "editor.fontFamily": "Fira Code",
+  "editor.wordWrap": "on",
+  "editor.accessibilityPageSize": 10,
+}
