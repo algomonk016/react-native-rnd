@@ -1,6 +1,7 @@
 // include this line for mocking react-native-gesture-handler
 import 'react-native-gesture-handler/jestSetup';
 import 'whatwg-fetch';
+import './__mocks__/react-native';
 
 jest.useFakeTimers();
 // include this section and the NativeAnimatedHelper section for mocking react-native-reanimated
