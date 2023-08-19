@@ -6,14 +6,24 @@ import React from 'react';
 // navigation
 import {BottomTabScreenProps} from '@react-navigation/bottom-tabs';
 import {BottomNavigatorParam} from '@/navigation/types';
+import {useAppSelector} from '@/hooks/redux.hooks';
+import {styles} from './styles';
 
 type Props = BottomTabScreenProps<BottomNavigatorParam, 'Profile'>;
 
 const Profile = ({navigation}: Props) => {
+  const {id, username} = useAppSelector(state => state.auth);
+
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={styles.container}>
       <View>
-        <Text>Profile</Text>
+        <Text style={styles.text}>Profile</Text>
+
+        <View>
+          <Text style={styles.text}>id: {id}</Text>
+          <Text style={styles.text}>username: {username}</Text>
+        </View>
+
         <Button onPress={() => navigation.navigate('HomeStack')}> Home </Button>
       </View>
     </SafeAreaView>

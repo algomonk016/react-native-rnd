@@ -26,5 +26,6 @@ export const useNavigation = jest.fn();
  * initially the useNavigation will not have the properties of a navigator
  * that'll cause error
  * to fix this, added the required properties manually
- * */ 
+ *
+ * */
 useNavigation.mockReturnValue(mockNavigation);
