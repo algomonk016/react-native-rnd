@@ -3,4 +3,5 @@
 
 yarn lint-staged
 yarn dependencies:checkCircular
+yarn dependencies:circularGraph
 yarn dependencies:graph

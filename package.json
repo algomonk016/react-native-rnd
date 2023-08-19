@@ -34,7 +34,8 @@
     "test": "jest --watch",
     "postinstall": "yarn setup:ios",
     "dependencies:checkCircular": "madge src/ --circular",
-    "dependencies:graph": "madge src/ --circular --image deps-graph.svg",
+    "dependencies:circularGraph": "madge src/ --circular --image ./deps-graph/circular-deps-graph.svg",
+    "dependencies:graph": "madge src/ --image ./deps-graph/deps-graph.svg",
     "setup:ios": "cd ios && pod install --repo-update && cd .."
   },
   "dependencies": {
