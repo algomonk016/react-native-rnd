@@ -4,6 +4,6 @@
 /***********************************************/
 
 export default {
-  API_URL: 'https://reqres.in/api',
+  API_URL: 'https://dummyjson.com/',
   ENV: 'development',
 };
