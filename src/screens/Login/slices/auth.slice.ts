@@ -1,13 +1,13 @@
 import {createSlice} from '@reduxjs/toolkit';
 
-type AuthState = {
+export type TAuthState = {
   isAuthenticated: boolean;
   token: string | null;
   username: string | null;
   id: number | null;
 };
 
-const initialState: AuthState = {
+const initialState: TAuthState = {
   isAuthenticated: false,
   token: null,
   username: null,
